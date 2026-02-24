@@ -23,7 +23,23 @@
         <a href="obladnannya.html" aria-current="page">Обладнання</a>
         <a href="index.html#contacts">Контакти</a>
       </nav>
+      <button class="menu-toggle" type="button" aria-label="Відкрити меню" aria-expanded="false" data-menu-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
       <a class="btn btn-sm" href="index.html#lead">Залишити заявку</a>
+    </div>
+    <div class="mobile-menu" data-mobile-menu>
+      <div class="mobile-menu__backdrop" data-menu-close></div>
+      <div class="mobile-menu__panel">
+        <a href="index.html#about" data-menu-link>Про нас</a>
+        <a href="index.html#advantages" data-menu-link>Переваги</a>
+        <a href="index.html#work" data-menu-link>Як ми працюємо</a>
+        <a href="obladnannya.html" data-menu-link>Обладнання</a>
+        <a href="index.html#contacts" data-menu-link>Контакти</a>
+        <a class="btn" href="index.html#lead" data-menu-link>Залишити заявку</a>
+      </div>
     </div>
   </header>
 
@@ -111,6 +127,24 @@
       <p>© <span id="year"></span> ПiвТорг. Дистрибуція розливних напоїв у Дніпрі та області.</p>
     </div>
   </footer>
+
+  <div class="quick-contact" data-quick-contact>
+    <button class="quick-contact__toggle" type="button" aria-label="Відкрити контакти" aria-expanded="false" data-quick-toggle>
+      Контакти
+    </button>
+    <div class="quick-contact__panel">
+      <a class="quick-contact__icon" href="tel:+380682095250" aria-label="Зателефонувати Олександру">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M6.6 10.8a15.6 15.6 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.24c1.06.35 2.2.54 3.4.54a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.5 21 3 13.5 3 4a1 1 0 0 1 1-1h3.52a1 1 0 0 1 1 1c0 1.2.2 2.34.54 3.4a1 1 0 0 1-.25 1.02L6.6 10.8z"/>
+        </svg>
+      </a>
+      <a class="quick-contact__icon" href="https://www.instagram.com/_pivtorg_official_/" target="_blank" rel="noreferrer" aria-label="Instagram ПiвТорг">
+        <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+          <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zm10.75 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/>
+        </svg>
+      </a>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
