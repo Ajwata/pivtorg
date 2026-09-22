@@ -47,6 +47,14 @@ async function sendToTelegram(payload) {
   }
 }
 
+const formsLoadedAt = Date.now();
+const MIN_SUBMIT_DELAY_MS = 2500;
+
+function isValidPhone(value) {
+  const digits = value.replace(/\D/g, '');
+  return digits.length >= 9 && digits.length <= 15;
+}
+
 for (const form of forms) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -56,11 +64,31 @@ for (const form of forms) {
     const formData = new FormData(form);
 
     const payload = {
-      name: String(formData.get('name') || '').trim(),
-      phone: String(formData.get('phone') || '').trim(),
-      company: String(formData.get('company') || '').trim(),
-      message: String(formData.get('message') || '').trim(),
+      name: String(formData.get('name') || '').trim().slice(0, 100),
+      phone: String(formData.get('phone') || '').trim().slice(0, 30),
+      company: String(formData.get('company') || '').trim().slice(0, 150),
+      message: String(formData.get('message') || '').trim().slice(0, 1000),
+      website: String(formData.get('website') || '').trim(),
+      elapsed: Date.now() - formsLoadedAt,
     };
+
+    if (!payload.name) {
+      status.textContent = 'Вкажіть, будь ласка, ваше імʼя.';
+      return;
+    }
+
+    if (!isValidPhone(payload.phone)) {
+      status.textContent = 'Перевірте номер телефону.';
+      return;
+    }
+
+    // Honeypot filled or submitted implausibly fast — almost certainly a bot.
+    // Pretend success so the bot doesn't learn it was caught.
+    if (payload.website || payload.elapsed < MIN_SUBMIT_DELAY_MS) {
+      status.textContent = 'Дякуємо! Заявку відправлено.';
+      form.reset();
+      return;
+    }
 
     status.textContent = 'Відправляємо...';
     submitButton.disabled = true;

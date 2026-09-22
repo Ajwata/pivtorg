@@ -366,21 +366,27 @@
 
         <form id="lead" class="form" data-form>
           <h2>Заявка на співпрацю</h2>
+          <div class="hp-field" aria-hidden="true">
+            <label>
+              Залиште це поле порожнім
+              <input type="text" name="website" tabindex="-1" autocomplete="off">
+            </label>
+          </div>
           <label>
             Ім'я
-            <input name="name" type="text" placeholder="Ваше ім'я" required>
+            <input name="name" type="text" placeholder="Ваше ім'я" maxlength="100" required>
           </label>
           <label>
             Телефон
-            <input name="phone" type="tel" placeholder="+380 (__) ___-__-__" required>
+            <input name="phone" type="tel" placeholder="+380 (__) ___-__-__" maxlength="30" required>
           </label>
           <label>
             Компанія
-            <input name="company" type="text" placeholder="Назва компанії">
+            <input name="company" type="text" placeholder="Назва компанії" maxlength="150">
           </label>
           <label>
             Коментар
-            <textarea name="message" rows="4" placeholder="Асортимент, обсяг, район доставки..."></textarea>
+            <textarea name="message" rows="4" placeholder="Асортимент, обсяг, район доставки..." maxlength="1000"></textarea>
           </label>
           <label class="check">
             <input type="checkbox" name="age18" required>

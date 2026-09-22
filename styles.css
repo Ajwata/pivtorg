@@ -585,6 +585,7 @@ h1 span { color: var(--blue); }
 .form textarea::placeholder { color: #8a93a6; }
 .form input:focus,
 .form textarea:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(36, 84, 232, 0.18); }
+.hp-field { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .check { grid-template-columns: 18px 1fr; align-items: center; gap: 10px; font-weight: 500; }
 .check input { margin: 0; width: 16px; height: 16px; accent-color: var(--blue); }
 .form-status { margin: 0; min-height: 18px; font-size: 13px; color: var(--muted); }
