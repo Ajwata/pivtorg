@@ -28,7 +28,7 @@ module.exports = async (req, res) => {
     `Телефон: ${phone}`,
     `Компанія: ${company}`,
     `Коментар: ${message}`,
-    `Час: ${new Date().toLocaleString('uk-UA')}`,
+    `Час: ${new Date().toLocaleString('uk-UA', { timeZone: 'Europe/Kyiv' })}`,
   ].join('\n');
 
   try {
