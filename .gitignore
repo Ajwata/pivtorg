@@ -6,3 +6,12 @@ node_modules/
 .DS_Store
 Thumbs.db
 .claude/
+
+# unused legacy source images kept locally for reference only
+/background.png
+/icon 1.png
+/icon 2.png
+/icon 3.png
+/icon 4.png
+/perevagi.jpg
+/yakist.png
