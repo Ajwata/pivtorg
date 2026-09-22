@@ -92,12 +92,14 @@ if (menuToggle && mobileMenu) {
   const closeMenu = () => {
     mobileMenu.classList.remove('is-open');
     menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.classList.remove('is-active');
     document.body.classList.remove('menu-open');
   };
 
   menuToggle.addEventListener('click', () => {
     const isOpen = mobileMenu.classList.toggle('is-open');
     menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    menuToggle.classList.toggle('is-active', isOpen);
     document.body.classList.toggle('menu-open', isOpen);
   });
 
