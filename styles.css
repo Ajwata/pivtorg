@@ -121,6 +121,9 @@ nav a[aria-current='page']::after { right: 0; }
   right: 12px;
   top: 88px;
   width: min(320px, calc(100% - 24px));
+  max-height: calc(100vh - 104px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   border-radius: 16px;
   border: 1px solid var(--line);
   background: var(--white);
@@ -142,6 +145,41 @@ nav a[aria-current='page']::after { right: 0; }
   background: var(--bg-soft);
 }
 .mobile-menu__panel .btn { margin-top: 4px; }
+
+.mobile-menu__divider { height: 1px; background: var(--line); margin: 4px 0; }
+.mobile-menu__label {
+  margin: 2px 0 0;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+  color: var(--muted);
+}
+.mobile-menu__chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.mobile-menu__chips a {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  background: var(--white);
+}
+.mobile-menu__chips a:hover { border-color: var(--blue); color: var(--blue); }
+
+.mobile-menu__phones,
+.mobile-menu__social { display: grid; gap: 6px; }
+.mobile-menu__phones a,
+.mobile-menu__social a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+}
+.mobile-menu__phones a svg,
+.mobile-menu__social a svg { width: 16px; height: 16px; color: var(--blue); flex: none; }
+.mobile-menu__social a svg { fill: currentColor; }
+.mobile-menu__phones a:hover,
+.mobile-menu__social a:hover { border-color: var(--blue); color: var(--blue); }
 .mobile-menu.is-open { pointer-events: auto; }
 .mobile-menu.is-open .mobile-menu__backdrop { opacity: 1; }
 .mobile-menu.is-open .mobile-menu__panel { transform: translateY(0) scale(1); opacity: 1; }
@@ -616,7 +654,6 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   .phone-pill { display: none; }
   .menu-toggle { display: inline-flex; }
   .hero-grid { grid-template-columns: 1fr; }
-  .hero-photo { order: -1; }
   .about-grid { grid-template-columns: 1fr; }
   .category-grid { grid-template-columns: repeat(3, 1fr); }
   .advantages-grid { grid-template-columns: 1fr 1fr; }
