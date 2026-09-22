@@ -1,0 +1,12 @@
+{
+  "redirects": [
+    { "source": "/asortiment", "destination": "/#assortment", "permanent": false },
+    { "source": "/assortment", "destination": "/#assortment", "permanent": false },
+    { "source": "/pro-nas", "destination": "/#about", "permanent": false },
+    { "source": "/perevagy", "destination": "/#advantages", "permanent": false },
+    { "source": "/perevahy", "destination": "/#advantages", "permanent": false },
+    { "source": "/kontakty", "destination": "/#contacts", "permanent": false },
+    { "source": "/kontakti", "destination": "/#contacts", "permanent": false },
+    { "source": "/obladnannya", "destination": "/obladnannya.html", "permanent": false }
+  ]
+}
